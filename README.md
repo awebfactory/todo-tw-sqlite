@@ -14,7 +14,8 @@ npm i prisma -D
 npx prisma init --datasource-provider sqlite
 ```
 
-- prisma tells us to put `.env` ub `,gitignore`
+- prisma tells us to put `.env` in `,gitignore`
+  - Copy `.env.example` to `.env` and modify as per requirements
 
 ```bash
 npx prisma migrate dev --name init
