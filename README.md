@@ -1,3 +1,42 @@
+# Todo Tailwind Sqlite
+
+> Based on Tutorial [You Tube Web Dev Simplified - Learn Next.js 13 With This One Project](https://youtu.be/NgayZAuTgwM?si=BuQfd5BDetNI7Max)
+
+- See also [tutorial repo](https://github.com/WebDevSimplified/next-13-todo-list)
+
+## Setup
+
+```bash
+git clone git@github.com:WebDevSimplified/next-13-todo-list.git
+npx create-next-app@latest todo-tw-sqlite
+cd todo-tw-sqlite/
+npm i prisma -D
+npx prisma init --datasource-provider sqlite
+```
+
+- prisma tells us to put `.env` ub `,gitignore`
+
+```bash
+npx prisma migrate dev --name init
+victor@victorpc:todo-tw-sqlite$ tree prisma
+prisma
+├── dev.db
+├── dev.db-journal
+├── migrations
+│   ├── 20230929130025_init
+│   │   └── migration.sql
+│   └── migration_lock.toml
+└── schema.prisma
+```
+
+- We need to put the database in `.gitignore`
+
+- [Best practice for instantiating PrismaClient with Next.js](https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices#solution)
+  - See `src/db.ts`
+
+---
+
+Original
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
