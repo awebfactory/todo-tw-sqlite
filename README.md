@@ -35,6 +35,19 @@ prisma
 - [Best practice for instantiating PrismaClient with Next.js](https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices#solution)
   - See `src/db.ts`
 
+## Tutorial completed
+
+```bash
+commit 9ddd764f098e35e6c95ef4f1012bad44008986d2 (HEAD -> main, origin/main)
+Author: victorkane <victorkane@gmail.com>
+Date:   Fri Sep 29 18:35:58 2023 -0300
+
+    feat: complete server action update to db checked value todo on Home page
+
+ src/app/page.tsx | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+```
+
 ---
 
 Original
