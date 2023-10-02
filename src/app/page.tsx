@@ -2,6 +2,8 @@ import { prisma } from "@/db"
 import Link from "next/link"
 import { TodoItem } from "@/components/TodoItem"
 
+export const revalidate = 0
+
 function getTodos() {
   return prisma.todo.findMany()
 }
