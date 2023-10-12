@@ -26,6 +26,16 @@ fb8bf0b docs: indicate completed server actions to end tutorial
 2324a73 (HEAD -> main, origin/main) fix: render new todo items in the client
 ```
 
+## Note on Prisma Studio
+
+- [Prisma Studio](https://www.prisma.io/studio)
+
+> Available on all major platforms
+>
+> Run it from the command line with `npx prisma studio`
+
+(cuz that way you always run the latest version and you don't have to be always updating all the time)
+
 ## Setup
 
 ```bash
