@@ -4,6 +4,28 @@
 
 - See also [tutorial repo](https://github.com/WebDevSimplified/next-13-todo-list)
 
+## Development in order of commits
+
+```bash
+047819a Initial commit from Create Next App
+b916871 build: prepare app with database migration based on Todo model
+860ac76 build: complete preparation app with database migration based on Todo model
+b376e1a build: scaffold some pages
+2bd86ad build: scaffold page navigation
+a4aa77d chore: configure env file in setup
+a9fd892 build: scaffold server component data fetching and creation
+75dbd68 build(todo items): scaffold TodoItem component
+2b5b2e7 style(TodoItem): checked state
+8c6123c build(new page): scaffold New page
+6809190 build(new page): scaffold server actions on New page
+f732d8d style: server action form on New page
+a47816d feat(Todos): implement create new todo (test in db)
+aac8cba build: scaffold update checked value todo on Home page
+9ddd764 feat: complete server action update to db checked value todo on Home page
+fb8bf0b docs: indicate completed server actions to end tutorial
+2324a73 (HEAD -> main, origin/main) fix: render new todo items in the client
+```
+
 ## Setup
 
 ```bash
@@ -46,6 +68,27 @@ Date:   Fri Sep 29 18:35:58 2023 -0300
 
  src/app/page.tsx | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
+```
+
+## Fix for new todo to appear immediately on TODO listing page
+
+- fix in commit: `2324a73 (HEAD -> main, origin/main) fix: render new todo items in the client`
+
+```bash
+victor@victorpc:todo-tw-sqlite$ git diff fb8bf0b 2324a73
+diff --git a/src/app/page.tsx b/src/app/page.tsx
+index 2f3fb36..87b2100 100644
+--- a/src/app/page.tsx
++++ b/src/app/page.tsx
+@@ -2,6 +2,8 @@ import { prisma } from "@/db"
+ import Link from "next/link"
+ import { TodoItem } from "@/components/TodoItem"
+
++export const revalidate = 0
++
+ function getTodos() {
+   return prisma.todo.findMany()
+ }
 ```
 
 ---
